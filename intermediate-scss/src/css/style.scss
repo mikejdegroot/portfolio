@@ -21,9 +21,10 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
-#hero {
+#top {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/hero-image.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/windfarm.jpg');
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -96,6 +97,11 @@ header {
 
 
 #menus {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/hero-image.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   a {
     @extend.header-styles;
     text-transform: uppercase;
