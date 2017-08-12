@@ -15,11 +15,12 @@ $(function () {
 
     if (scrollTop <= 700) {
       $('.projosIndex').addClass('hidden');
-    } else if (scrollTop <= 1400) {
+    } else if (scrollTop <= 1800) {
       $('.projosIndex').removeClass('hidden');
     } else {
       $('.projosIndex').addClass('hidden');
     }
+    $('#blackOverlay').css('opacity', scrollTop / $('#blackOverlay').height());
   }
 
   $('nav a').on('click', scrollToSection);

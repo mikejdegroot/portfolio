@@ -127,8 +127,8 @@ header {
 }
 
 
-#projosSection {
-  height: 350vh;
+#firstProjosSection {
+  height: 230vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -143,7 +143,7 @@ header {
     color: white;
   }
 
-  #projos {
+  #projosOneTwo {
     position: absolute;
     bottom: 0;
     .projoOne {
@@ -206,4 +206,13 @@ footer {
       }
     }
 
+}
+
+#blackOverlay {
+  background-color:#000;
+  opacity:0.0;
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
 }
