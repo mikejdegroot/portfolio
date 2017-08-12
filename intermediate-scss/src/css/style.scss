@@ -1,8 +1,14 @@
 @import "bootstrap/bootstrap-grid";
-$brand-color: #c99124;
+$primary:	#225BA8;
+$secondary: #183059;
+$tertiary: #93C1F2;
 
 body {
   font-family: 'Karla', sans-serif;
+}
+
+.hidden {
+  display: none;
 }
 
 .header-styles {
@@ -20,22 +26,26 @@ h1, h2, h3 {
   @extend .header-styles;
   margin-top: 0;
 }
+p{
+  font-size: 20px;
+}
 
-#top {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/windfarm.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  h1 {
-    font-size: 36px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }
+.up {
+  background-color: $primary;
+  top: -100px;
+  height: 400px;
+  z-index: 1;
+  color: white;
+
+
+}
+
+.down {
+  background-color: $secondary;
+  height: 400px;
+  z-index: 1;
+  color: white;
+
 }
 
 header {
@@ -77,6 +87,28 @@ header {
   }
 }
 
+#top {
+  height: 115vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/windfarm.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  h1 {
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+}
+
+#about {
+  height: 200px;
+}
+
+
   section {
   text-align: center;
   h2 {
@@ -86,7 +118,6 @@ header {
     padding-top: 80px;
     padding-bottom: 80px;
     position: relative;
-    border-bottom: 2px solid $brand-color;
   }
   &:last-of-type {
     .container {
@@ -96,54 +127,43 @@ header {
 }
 
 
-#menus {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/hero-image.jpg');
+#projosSection {
+  height: 350vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  a {
-    @extend.header-styles;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid $brand-color;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: $brand-color;
-    display: inline-block;
-    &:hover {
-      border-style: dotted;
+  z-index: -5;
+  position: relative;
+  .projosIndex {
+    position: fixed;
+    width: 66%;
+    top: 200px;
+    color: white;
+  }
+
+  #projos {
+    position: absolute;
+    bottom: 0;
+    .projoOne {
+      background-color: $primary;
+    }
+    .projoOnepic {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/project-screens/project-1-screen.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 500px;
+    }
+    .projoTwo {
+      background-color: $secondary;
     }
   }
 }
 
-#gallery {
-  .image {
-    background-position: center;
-    background-size: cover;
-    &:after {
-      content: "";
-      padding-bottom: 100%;
-      display: block;
-    }
-    &.image-one {
-      background-image: url('../assets/images/image-one.jpg');
-    }
-    &.image-two {
-      background-image: url('../assets/images/image-two.jpg');
-    }
-    &.image-three {
-      background-image: url('../assets/images/image-three.jpg');
-    }
-  }
-}
 
-#location {
-  #map {
-    height: 300px;
-    background-color: grey;
-  }
-}
+
 
 footer {
   background-color: rgba(20,20,20, 1);
@@ -151,14 +171,17 @@ footer {
   text-align: center;
   color: white;
 }
+
+
+
 @media only screen and (max-width: 575px) {
-  #gallery {
+  #about {
     .image {
         margin-bottom: 15px;
     }
 
   }
-  #menus {
+  #projos {
     a:not(:last-of-type){
       margin-bottom: 5px;
     }
