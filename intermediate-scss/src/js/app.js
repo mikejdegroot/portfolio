@@ -1,8 +1,11 @@
 $(() => {
 
+  const $gaSummary = $('.gaSumarry');
+  const $name = $('.name');
+  const $bangerDesc = $('.projoTwoDesc');
+
+
   $(window).scroll(updateHeader).trigger('scroll');
-
-
 
   function updateHeader() {
     const viewportHeight = $(window).height();
@@ -16,14 +19,21 @@ $(() => {
     }
 
     if(scrollTop <= 650){
-      $('.gaSumarry').addClass('hidden');
-      $('.name').removeClass('hidden');
-    } else if(scrollTop <= 1200) {
-      $('.gaSumarry').removeClass('hidden');
-      $('.name').addClass('hidden');
+      $gaSummary.hide();
+      $bangerDesc.hide();
+      $name.show();
+    } else if(scrollTop <= 1900) {
+      $gaSummary.show();
+      $name.hide();
+      $bangerDesc.hide();
+    } else if(scrollTop <= 2500) {
+      $bangerDesc.show();
     } else {
-      $('.gaSumarry').addClass('hidden');
+      $gaSummary.hide();
     }
+
+
+
     $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
 
   }

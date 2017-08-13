@@ -33,7 +33,7 @@ p{
 .up {
   background-color: $primary;
   top: -100px;
-  height: 400px;
+  height: 550px;
   z-index: 1;
   color: white;
 
@@ -42,7 +42,7 @@ p{
 
 .down {
   background-color: $secondary;
-  height: 400px;
+  height: 550px;
   z-index: 1;
   color: white;
 
@@ -129,7 +129,7 @@ header {
 
 
 #sectionTwo {
-  height: 200vh;
+  height: 145vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -173,12 +173,33 @@ header {
 
 
 }
+#sectionThree {
+  height: 0;
+}
 
-
-
-
-
-
+#sectionFour {
+  height: 155vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('../assets/images/banger-alert.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .row {
+    width: 100%;
+    height: 100%;
+    .bangerAlertOverlay {
+      width: 50%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      .projoTwoDesc{
+        top: 260px;
+        color: white;
+        bottom: 0;
+        position: fixed;
+      }
+    }
+  }
+}
 
 
 footer {
