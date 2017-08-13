@@ -7,6 +7,7 @@ $(() => {
   function updateHeader() {
     const viewportHeight = $(window).height();
     const scrollTop = $(window).scrollTop();
+    const tripleHeight = ($('#blackOverlay').height());
     if(scrollTop >= viewportHeight - 40) {
       $('header').addClass('translucent');
 
@@ -14,14 +15,16 @@ $(() => {
       $('header').removeClass('translucent');
     }
 
-    if(scrollTop <= 700){
-      $('.projosIndex').addClass('hidden');
-    } else if(scrollTop <= 1800) {
-      $('.projosIndex').removeClass('hidden');
+    if(scrollTop <= 650){
+      $('.gaSumarry').addClass('hidden');
+      $('.name').removeClass('hidden');
+    } else if(scrollTop <= 1200) {
+      $('.gaSumarry').removeClass('hidden');
+      $('.name').addClass('hidden');
     } else {
-      $('.projosIndex').addClass('hidden');
+      $('.gaSumarry').addClass('hidden');
     }
-    $('#blackOverlay').css('opacity',scrollTop/$('#blackOverlay').height());
+    $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
 
   }
 
