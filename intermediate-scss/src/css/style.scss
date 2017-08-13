@@ -60,31 +60,85 @@ header {
   &.translucent {
     background-color: rgba(20,20,20, 0.6)
   }
-  nav {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li {
-        float: right;
-        margin-left: 20px;
-        line-height: 40px;
-        &:last-of-type { //overrides the margin left on the rest of the nav as its not needed
-          margin-left: 0;
-        }
-        &.menu {
-          color: white;
-          cursor: pointer;
-          font-size: 20px;
-          display: none;
-        }
-        a {
-          color: white;
-          @extend .header-styles; //extends allows you to group repeated code in a new class and import it where needed
-        }
-      }
+  // nav {
+  //   ul {
+  //     list-style: none;
+  //     padding: 0;
+  //     margin: 0;
+  //     li {
+  //       float: right;
+  //       margin-left: 20px;
+  //       line-height: 40px;
+  //       &:last-of-type { //overrides the margin left on the rest of the nav as its not needed
+  //         margin-left: 0;
+  //       }
+  //       &.menu {
+  //         color: white;
+  //         cursor: pointer;
+  //         font-size: 20px;
+  //         display: none;
+  //       }
+  //       a {
+  //         color: white;
+  //         @extend .header-styles; //extends allows you to group repeated code in a new class and import it where needed
+  //       }
+  //     }
+  //   }
+  // }
+
+  $aside-width: 200px;
+
+%item {
+  position: relative;
+  width: 80px;
+  height: 10px;
+  margin-bottom: 10px;
+  background-color: #ED6B5D;
+  border-radius: 3px;
+}
+
+.menu {
+  transition: transform 500ms ease 0s;
+
+  &.active {
+    transform: translate3d($aside-width, 0, 0);
+
+    & ~ aside {
+      transform: translate3d(0, 0, 0);
     }
   }
+}
+.menu__item--1,
+.menu__item--2,
+.menu__item--3 {
+  @extend %item;
+}
+
+aside {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 500ms ease 0s;
+
+  width: $aside-width;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ED6B5D;
+}
+
+//
+body {
+  background: #f9f9f9;
+}
+
+// reset button styles
+button {
+  border: none;
+  background: none;
+  outline: 0;
+  padding: 50px;
+}
 }
 
 #top {
