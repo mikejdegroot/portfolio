@@ -5,48 +5,7 @@ $(function () {
   var $gaSummary = $('.gaSumarry');
   var $name = $('.name');
   var $bangerDesc = $('.projoTwoDesc');
-
-  $(window).scroll(updateHeader).trigger('scroll');
-
-  function updateHeader() {
-    var viewportHeight = $(window).height();
-    var scrollTop = $(window).scrollTop();
-    var tripleHeight = $('#blackOverlay').height();
-    if (scrollTop >= viewportHeight - 40) {
-      $('header').addClass('translucent');
-    } else {
-      $('header').removeClass('translucent');
-    }
-
-    if (scrollTop <= 650) {
-      $gaSummary.hide();
-      $bangerDesc.hide();
-      $name.show();
-    } else if (scrollTop <= 1900) {
-      $gaSummary.show();
-      $name.hide();
-      $bangerDesc.hide();
-    } else if (scrollTop <= 2500) {
-      $bangerDesc.show();
-    } else {
-      $gaSummary.hide();
-    }
-
-    $('#blackOverlay').css('opacity', scrollTop / tripleHeight);
-  }
-
-  $('nav a').on('click', scrollToSection);
-
-  function scrollToSection() {
-    var section = $(this).attr('href');
-    $('body').animate({
-      scrollTop: $(section).offset().top - $('header').height()
-    }, 400, function () {
-      if ($(window).width() < 575) {
-        $('.dropdown').slideToggle();
-      }
-    });
-  }
+  var $spotlightDesc = $('.projoFourDesc');
 
   //Burger menu animation with greensock / gsap
   var menu = $('.menu'),
@@ -55,19 +14,46 @@ $(function () {
       menuitem3 = $('.menu__item--3'),
       speed = 0.15;
 
+  $(window).scroll(updateHeader).trigger('scroll'); //run the update header function on scroll
+
+  function updateHeader() {
+    // const viewportHeight = $(window).height();
+    var scrollTop = $(window).scrollTop();
+    var tripleHeight = $('#blackOverlay').height();
+
+    if (scrollTop <= 650) {
+      $name.show();
+      $gaSummary.hide();
+      $bangerDesc.hide();
+      $spotlightDesc.hide();
+    } else if (scrollTop <= 1600) {
+      $gaSummary.show();
+      $name.hide();
+      $bangerDesc.hide();
+      $spotlightDesc.hide();
+    } else if (scrollTop <= 2800) {
+      $bangerDesc.show();
+      $spotlightDesc.hide();
+    } else if (scrollTop <= 4100) {
+      $spotlightDesc.show();
+    } else {
+      $gaSummary.hide();
+      $spotlightDesc.hide();
+    }
+
+    $('#blackOverlay').css('opacity', scrollTop / tripleHeight);
+  }
+
   //instantiate  timeline
   var tl = new TimelineLite({ paused: true }); //pause default
-
-  //collapse menu
+  //collapse burger
   tl.to(menuitem1, speed, { top: 20, ease: Quint.easeOut }, 'label--1').to(menuitem3, speed, { top: -20, ease: Quint.easeOut }, 'label--1'
-
-  //rotate all items
+  //rotate all burger items
   ).to([menuitem1, menuitem2, menuitem3], speed, { rotation: -90, ease: Quint.easeOut }
-
-  //expand menu
+  //expand burger
   ).to(menuitem1, speed, { left: 20, ease: Quint.easeOut }, 'label--2').to(menuitem3, speed, { right: 20, ease: Quint.easeOut }, 'label--2');
 
-  // play timeline on click, reverse animation if active
+  // play timeline on click, reverse animation for navbar if active
   menu.click(function () {
     $(this).toggleClass('active');
 
@@ -78,9 +64,15 @@ $(function () {
     }
   });
 
-  $('.menu').on('click', toggleMenu);
-
-  function toggleMenu() {
-    $('.dropdown').slideToggle();
+  $('nav a').on('click', scrollToSection);
+  //scroll to selection on nav, then close the nav
+  function scrollToSection() {
+    var section = $(this).attr('href');
+    $('body').animate({
+      scrollTop: $(section).offset().top - $('header').height()
+    }, 800, function () {
+      menu.toggleClass('active');
+      tl.reverse();
+    });
   }
 });
