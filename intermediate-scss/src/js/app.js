@@ -19,7 +19,7 @@ $(() => {
   function updateHeader() {
     // const viewportHeight = $(window).height();
     const scrollTop = $(window).scrollTop();
-    const tripleHeight = ($('#blackOverlay').height());
+    const tripleHeight = ($('#blackOverlay').height()*1.8);
 
 
     if(scrollTop <= 650){
@@ -37,9 +37,11 @@ $(() => {
       $spotlightDesc.hide();
     } else if(scrollTop <= 4100){
       $spotlightDesc.show();
+      $bangerDesc.hide();
     } else {
       $gaSummary.hide();
       $spotlightDesc.hide();
+      $bangerDesc.hide();
     }
 
 

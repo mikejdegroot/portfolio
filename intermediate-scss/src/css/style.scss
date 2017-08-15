@@ -1,14 +1,29 @@
 @import "bootstrap/bootstrap-grid";
 $primary:	#424C55;
-$secondary: #183059;
+$secondary: #F2F2F2;
 $tertiary: #93C1F2;
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
-.hidden {
-  display: none;
+.text-left-styles {
+  padding: 12px;
+  letter-spacing: 1px;
+  margin-left: 250px;
+  text-align: left;
+  p {
+    font-size: 18px;
+  }
+}
+
+.text-right-styles {
+  font-size: 18px;
+  padding: 12px;
+  letter-spacing: 1px;
+  margin-right: 250px;
+  text-align: right;
 }
 
 .header-styles {
@@ -17,18 +32,11 @@ body {
   font-weight: bold;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 h1, h2, h3 {
   @extend .header-styles;
   margin-top: 0;
 }
-p{
-  font-size: 20px;
-}
+
 
 .up {
   background-color: $primary;
@@ -36,16 +44,13 @@ p{
   height: 550px;
   z-index: 1;
   color: white;
-
-
 }
 
 .down {
-  background-color: $secondary;
+  background-color: rgba(0, 0, 0, 0.2);
   height: 550px;
   z-index: 1;
   color: white;
-
 }
 
 header {
@@ -56,70 +61,83 @@ header {
   z-index: 2;
   height: 100px;
 
-$aside-width: 250px;
+  $aside-width: 240px;
 
-%item {
-  position: relative;
-  width: 80px;
-  height: 10px;
-  margin-bottom: 10px;
-  background-color: #000;
-  border-radius: 3px;
-}
-
-.menu {
-  transition: transform 500ms ease 0s;
-
-  &.active {
-    transform: translate3d($aside-width, 0, 0);
-
-    & ~ aside {
-      transform: translate3d(0, 0, 0);
-    }
+  %item {
+    position: relative;
+    width: 80px;
+    height: 10px;
+    margin-bottom: 10px;
+    background-color: #000;
+    border-radius: 3px;
   }
-}
-.menu__item--1,
-.menu__item--2,
-.menu__item--3 {
-  @extend %item;
-}
 
-aside {
-  transform: translate3d(-100%, 0, 0);
-  transition: transform 500ms ease 0s;
+  .menu {
+    transition: transform 500ms ease 0s;
 
-  width: $aside-width;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #000;
-  nav {
-    li {
-    margin-top: 30px;
-    a {
-      color: white;
-      font-size: 30px;
+    &.active {
+      transform: translate3d($aside-width, 0, 0);
+
+      & ~ aside {
+        transform: translate3d(0, 0, 0);
       }
     }
-
   }
+  .menu__item--1,
+  .menu__item--2,
+  .menu__item--3 {
+    @extend %item;
+  }
+
+  aside {
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 500ms ease 0s;
+
+    width: $aside-width;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    nav {
+      li {
+      margin-top: 30px;
+      a {
+        color: white;
+        font-size: 30px;
+        }
+      }
+
+    }
+  }
+
+
+  body {
+    background: #f9f9f9;
+  }
+
+  // reset button styles
+  button {
+    border: none;
+    background: none;
+    outline: 0;
+    padding: 50px;
+  }
+
+
+  i.tech {
+    font-size: 6em;
+    margin: 10px;
+  }
+
+  div.skillz {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
 }
 
-//
-body {
-  background: #f9f9f9;
-}
-
-// reset button styles
-button {
-  border: none;
-  background: none;
-  outline: 0;
-  padding: 50px;
-}
-}
 
 #top {
   height: 100vh;
@@ -140,72 +158,61 @@ button {
 }
 
 #about {
-  height: 400px;
-}
-
-
-  section {
-  text-align: center;
-  h2 {
-    font-size: 28px;
+  height: 0;
+  h1, p {
+      @extend .text-left-styles;
   }
-  .container {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    position: relative;
-  }
-  &:last-of-type {
-    .container {
-      border-bottom: 0;
-    }
+    .profile-pic {
+    // background: transparent;
+    background-color: black;
+    background-image: url('../assets/images/mike-profile-pic-crop.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
   }
 }
-
 
 #sectionTwo {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
+  height: 145vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
-  // #blackOverlay {
-  //   background-color:#000;
-  //   opacity:0.0;
-  //   position:absolute;
-  //   top:0;
-  //   width:100%;
-  //   height:100%;
-  //   }
   .gaSumaryOverlay {
     width: 50%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
-    .gaSumarry {
-      position: fixed;
-      // width: 50%;
-      top: 200px;
-      color: white;
-    }
+  }
+  .gaSumarry {
+    position: fixed;
+    top: 200px;
+    color: white;
+    font-size: 18px;
+    @extend .text-left-styles;
   }
 }
 
 
 #sectionThree {
   height: 0;
-  #projectOne {
-    .projoOneImg {
-    top: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)), url('../assets/images/project-screens/project-1-screen.png');
-    background-size: cover;
-    height: 500px;
+
+  .projoOneImg {
+    background: transparent;
+    background-image: url('../assets/images/project-screens/soundboard-3.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 66%;
+  }
+  .projoOneDesc {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    h1 {
+      text-align: right;
+      margin-right: 260px;
     }
-    .projoOneDesc{
-      top: 200px;
-      color: white;
-      bottom: 0;
-      position: absolute;
+    p {
+      // @extend .p-styles;
+      text-align: right;
     }
   }
 
@@ -213,7 +220,7 @@ button {
 
 #sectionFour {
   height: 155vh;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('../assets/images/banger-alert.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../assets/images/banger-alert.png');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -226,16 +233,27 @@ button {
         color: white;
         bottom: 0;
         position: fixed;
+        font-size: 18px;
       }
     }
   }
 }
 #sectionFive {
-  height: 400px;
+  height: 0;
+  .projoThreeImg {
+    background: transparent;
+    background-image: url('../assets/images/project-screens/wabi-sabi-1.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 66%;
+  }
+  .projoThreeDesc {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  }
 }
 
 #sectionSix {
-  height: 100vh;
+  height: 145vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -262,6 +280,14 @@ footer {
 }
 
 
+#blackOverlay{
+  background-color:#000;
+  opacity:0.0;
+  position:absolute;
+  top:0;width:100%;
+  height:100%;
+}
+
 
 @media only screen and (max-width: 575px) {
   #about {
@@ -284,4 +310,5 @@ footer {
     opacity: 0;
   }
 
+}
 }
