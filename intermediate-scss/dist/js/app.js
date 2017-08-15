@@ -1,5 +1,8 @@
 'use strict';
 
+/* global TimelineLite */
+/* global Quint */
+
 $(function () {
 
   var $gaSummary = $('.gaSumarry');
@@ -42,7 +45,6 @@ $(function () {
       $spotlightDesc.hide();
       $bangerDesc.hide();
     }
-
     $('#blackOverlay').css('opacity', scrollTop / tripleHeight);
   }
 

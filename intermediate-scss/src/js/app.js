@@ -1,3 +1,6 @@
+/* global TimelineLite */
+/* global Quint */
+
 $(() => {
 
   const $gaSummary = $('.gaSumarry');
@@ -43,9 +46,6 @@ $(() => {
       $spotlightDesc.hide();
       $bangerDesc.hide();
     }
-
-
-
     $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
 
   }
