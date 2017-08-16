@@ -22,7 +22,7 @@ $(() => {
   function updateHeader() {
     // const viewportHeight = $(window).height();
     const scrollTop = $(window).scrollTop();
-    const tripleHeight = ($('#blackOverlay').height()*1.8);
+    const tripleHeight = ($('#blackOverlay').height()*3);
 
 
     if(scrollTop <= 650){
@@ -77,13 +77,14 @@ $(() => {
 
 
   $('nav a').on('click',scrollToSection);
+  $('h1 span').on('click',scrollToSection);
   //scroll to selection on nav, then close the nav
   function scrollToSection() {
     const section = $(this).attr('href');
     $('body').animate({
       scrollTop: $(section).offset().top -$('header').height()
     }, 800, () => {
-      menu.toggleClass('active');
+      menu.removeClass('active');
       tl.reverse();
     });
   }
