@@ -8,6 +8,8 @@ body {
   font-weight: 300;
 }
 
+
+
 .text-left-styles {
   padding: 12px;
   letter-spacing: 1px;
@@ -74,8 +76,8 @@ header {
   %item {
     position: relative;
     width: 80px;
-    height: 10px;
-    margin-bottom: 10px;
+    height: 6px;
+    margin-bottom: 14px;
     background-color: #fff;
     border-radius: 3px;
   }
@@ -169,6 +171,7 @@ header {
     // background: transparent;
     background-color: black;
     background-image: url('../assets/images/brighton-pier.jpg');
+    -webkit-filter: grayscale(100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -216,9 +219,15 @@ header {
     // background: transparent;
     background-color: black;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/project-screens/spotlight-4.png');
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.5s;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    &:hover {
+    transition: filter 0.5s;
+    -webkit-filter: grayscale(0%);
+    }
   }
   .projoOneDesc {
     h1 {
@@ -246,10 +255,16 @@ header {
 #sectionFour {
   height: 90vh;
   background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../assets/images/banger-alert.png');
+  -webkit-filter: grayscale(100%);
+  transition: filter 0.5s;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   position: relative;
+  &:hover {
+  transition: filter 0.5s;
+  -webkit-filter: grayscale(0%);
+  }
   .row {
     .bangerAlertOverlay {
       background-color: rgba(255, 255, 255, 0.3);
@@ -281,9 +296,15 @@ header {
     // background: transparent;
     background-color: black;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/project-screens/wabi-sabi-1.png');
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.5s;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    &:hover {
+    transition: filter 0.5s;
+    -webkit-filter: grayscale(0%);
+    }
   }
   .projoThreeDesc {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
@@ -306,11 +327,17 @@ header {
 #sectionSix {
   height: 90vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/images/project-screens/spotlight-1-copy.png');
+  -webkit-filter: grayscale(100%);
+  transition: filter 0.5s;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
+  &:hover {
+  transition: filter 0.5s;
+  -webkit-filter: grayscale(0%);
+  }
   .spotlightOverlay {
     width: 50%;
     height: 100%;
@@ -383,13 +410,23 @@ footer {
     }
   }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+
   }
 
-}
+  @keyframes colorfy {
+    0% {
+      -webkit-filter: grayscale(0%);
+    }
+    100% {
+      -webkit-filter: grayscale(100%);
+    }
+
+  }
 }
