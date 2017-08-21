@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mike de Groot</title>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVyvzzH0ARttF9y8rUbuGQJujT5LSFaYw"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
@@ -23,14 +23,14 @@
     <aside>
       <nav class="container">
         <ul>
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#sectionTwo">Projects</a></li>
-          <li><a href="#sectionThree"><span>01</span></a></li>
-          <li><a href="#sectionFour"><span>02</span></a></li>
-          <li><a href="#sectionFive"><span>03</span></a></li>
-          <li><a href="#sectionSix"><span>04</span></a></li>
-          <li><a href="#tech">Technologies</a></li>
+          <a href="#top"><li><span>Home</span></li></a>
+          <a href="#about"><li><span>About</span></li></a>
+          <a href="#sectionTwo"><li><span>Projects</span></li></a>
+          <a href="#sectionThree"><li><span>01</span></li></a>
+          <a href="#sectionFour"><li><span>02</span></li></a>
+          <a href="#sectionFive"><li><span>03</span></li></a>
+          <a href="#sectionSix"><li><span>04</span></li></a>
+          <a href="#tech"><li><span>Technologies</span></li></a>
         </ul>
       </nav>
     </aside>
@@ -43,29 +43,30 @@
     <section id="about">
       <!-- the info divs -->
       <div class="row">
-        <div class="col-lg-6 up">
-          <h1>About Me <span href="#about">V</span></h1>
-          <p>I'm a Front End web developer based in London.</p>
-          <p>I love developing, producing music and being creative.</p>
-          <p>I grew up in Brighton, did a Music Tech degree at London College of Music and studied Web Development at a General Assembly bootcamp course.</p>
-          <p>I love creating beautifully styled, useful projects from start to finish and try to combine my passions of music and developing as much as possible.</p>
-          <h1><span href="#sectionTwo">V</span></h1>
+        <div class="col-lg-6 col-md-6 up">
+          <h1 class="smallTitle">About<span href="#about"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+          <p>I'm a Full Stack web developer based in London.</p>
+          <p>I love developing, producing music and being creative. I grew up in Brighton, did a Music Tech degree at London College of Music and studied Web Development at a General Assembly bootcamp course.</p>
+          <p>I love creating beautifully styled, engaging projects from start to finish and try to combine my passions of music and developing as much as possible.</p>
+          <div class="navDiv">
+            <h1><span class="navArrows" href="#sectionTwo"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+          </div>
         </div>
-        <div class="col-lg-6 profile-pic down">
+        <div class="col-lg-6 col-md-6 profile-pic down">
         </div>
       </div>
     </section>
     <section id="sectionTwo">
       <!-- projects intro section -->
-      <div id="blackOverlay">
-      </div>
+      <!-- <div id="blackOverlay">
+      </div> -->
       <div class="gaSumaryOverlay">
         <div class="row">
-          <div class="gaSumarry col-lg-6">
+          <div class="gaSumarry col-lg-6 col-md-8 hidden">
             <section id="sectionTwoPointTwo">
-              <h1>Projects</h1>
-              <p>description of GA and what I did yeah</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h1>General Assembly</h1>
+              <p>In the summer of 2017 I joined a General Assembly Web development immersive course.</p>
+              <p>The GA immersive opened my eyes to the world of coding and has shown me how creative and exciting being a developer can be.</p><p> GA showed me that I not only had the ability to become a developer, but that I could also have a lot of fun doing it.</p>
             </section>
           </div>
         </div>
@@ -74,39 +75,60 @@
 
     <section id="sectionThree">
       <div class="row">
-        <div class="projoOneImg col-lg-6 down">
+        <div class="projoOneImg col-lg-6 col-sm-6 down">
           <!-- project image div  -->
         </div>
-        <div class="col-lg-6 projoOneDesc up">
-          <h1><span href="#sectionThree">V</span>Project 1</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div>
-            <h1><span href="#sectionFour">V</span></h1>
+        <div class="col-lg-6 col-sm-6 projoOneSquare up">
+            <h1><span class="navArrows" href="#sectionThree"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+          <div class="projoOneIntro">
+            <h1>Javascript Game</h1>
+            <p>An audio visual memory game</p>
+          </div>
+          <div class="projoOneDesc hidden">
+            <h1>Soundboard</h1>
+            <p>A multiplayer audio visual memory game. To play, you must repeat back the computer's sequence by hitting the keys 1-8 on your keyboard. Get the sequence right to progress to the next round, fail and enter the sudden death round. The difficulty increases with each round until a player faulters and there is a winner.</p>
+            <div>
+              <p><a class="links" href="https://github.com/mikejdegroot/project-0" target="_blank">GitHub</a> || <a class="links" href="https://tranquil-anchorage-93539.herokuapp.com/" target="_blank">Heroku</a></p>
+            </div>
+          </div>
+          <div class="navDiv">
+            <h1><span class="navArrows" href="#sectionFour"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
           </div>
         </div>
       </div>
     </section>
     <section id="sectionFour">
       <div class="row">
-        <div class="bangerAlertOverlay col-lg-6 offset-lg-6">
-          <div class="projoTwoDesc">
-            <h1>Banger Alert</h1>
-            <p>banger alert is a app</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="bangerAlertOverlay col-lg-6 offset-lg-6 col-sm-12">
+          <div class="projoTwoDesc col-lg-6 hidden">
+            <h1>Mix Tape</h1>
+            <p>A song suggestion app for 'YouTube DJs'. Once the user inputs a song the app will return a suggestion which is not only from a related artist but also rhythmically matched to the input. The app can then stack the songs in video players, allowing users to create video playlists.</p>
+            <div>
+              <p><a class="links" href="https://github.com/mikejdegroot/wdi-london-project-1" target="_blank">GitHub</a> || <a class="links" href="https://ancient-wave-67409.herokuapp.com/" target="_blank">Heroku</a></p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="sectionFive">
       <div class="row">
-        <div class="projoThreeDesc col-lg-6 up">
-          <h1><span href="#sectionFive">V</span>Project 3</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div>
-            <h1><span href="#sectionSix">V</span></h1>
+        <div class="projoThreeSquare col-lg-6 col-sm-6 up">
+          <h1><span class="navArrows" href="#sectionFive"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+          <div class="projoThreeIntro">
+            <h1>Ecommerce App</h1>
+          </div>
+          <div class="projoThreeDesc hidden">
+            <h1>Wabi Sabi</h1>
+            <p>An Ecommerce site for people to buy and sell homemade products. Buyers can add items to their shopping basket, enter card details at the checkout. Sellers can receive orders and mark them as shipped. I was responsible for the orders functionality which sends  orders to the relevant sellers and allows them to update their status.</p>
+            <div>
+              <p><a class="links" href="https://github.com/alexandriako/wdi-ldn-project-3" target="_blank">GitHub</a> || <a class="links" href="https://wabi-sabi.herokuapp.com/" target="_blank">Heroku</a></p>
+            </div>
+          </div>
+          <div class="navDiv">
+            <h1><span class="navArrows" href="#sectionSix"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
           </div>
         </div>
-        <div class="col-lg-6 projoThreeImg down">
+        <div class="col-lg-6 col-sm-6 projoThreeImg down">
           <!-- project image div  -->
         </div>
       </div>
@@ -114,14 +136,16 @@
     <section id="sectionSix">
       <div class="spotlightOverlay">
         <div class="row">
-          <div class="projoFourDesc col-lg-4 offset-lg-1">
+          <div class="projoFourDesc col-lg-6 col-md-8 hidden">
             <h1>Spotlight</h1>
-            <p>Spotlight is a app</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>A discussion forum for social issues. Users can post articles, comment and tag each other in the discussion for cohesive conversation. Once tagged, a user receives a notification in their nav bar and is directed to the article they were tagged in. My second group project, I took on a large part of the notifications functionality and styling tasks.</p>
+            <div>
+              <p><a class="links" href="https://github.com/maugeya/Project-4-api" target="_blank">GitHub BE</a> || <a class="links" href="https://github.com/maugeya/Project-4-frontend" target="_blank">GitHub FE</a> || <a class="links" href="https://intense-shelf-36393.herokuapp.com/" target="_blank">Heroku</a></p>
+            </div>
           </div>
         </div>
         <div class="vDiv">
-          <h1><span href="#tech">V</span></h1>
+          <h1><span class="navArrows" href="#tech"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
         </div>
       </div>
     </section>
@@ -133,13 +157,13 @@
           <h1 class="section-heading">My Technologies</h1>
         </div>
         <div class="skillz col-lg-12">
-          <i class="tech devicon-html5-plain-wordmark"></i>
+          <i class="tech devicon-javascript-plain"></i>
           <i class="tech devicon-css3-plain-wordmark"></i>
           <i class="tech devicon-bootstrap-plain-wordmark"></i>
           <i class="tech devicon-sass-original"></i>
           <i class="tech devicon-git-plain"></i>
           <i class="tech devicon-github-plain-wordmark"></i>
-          <i class="tech devicon-javascript-plain"></i>
+          <i class="tech devicon-html5-plain-wordmark"></i>
           <i class="tech devicon-angularjs-plain"></i>
           <i class="tech devicon-nodejs-plain"></i>
           <i class="tech devicon-jquery-plain-wordmark"></i>
@@ -162,13 +186,26 @@
         <div class="skillz col-lg-12">
         </div>
       </div>
+      <div class="vDiv">
+        <h1><span id="dark" class="navArrows" href="#contact"><i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+      </div>
+    </section>
 
 
-
+    <section id="contact" class="row">
+      <div class="col-lg-3 offset-lg-1">
+          <a class="linkOne hidden contacts" href="https://github.com/mikejdegroot" target="_blank">Github</a>
+      </div>
+      <div class="col-lg-4">
+        <a class="linkTwo hidden contacts" href="mailto:mike.j.degroot@gmail.com?subject=hi" target="_blank">Email</a>
+      </div>
+      <div class="col-lg-3">
+        <a class="linkThree hidden contacts" href="http://exercism.io/mikejdegroot" target="_blank">Exercism</a>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; General Assembly 2017</p>
+    <p>Mike de Groot</p>
   </footer>
 </body>
 </html>

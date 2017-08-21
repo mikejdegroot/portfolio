@@ -7,13 +7,36 @@ $(() => {
   const $name = $('.name');
   const $bangerDesc = $('.projoTwoDesc');
   const $spotlightDesc = $('.projoFourDesc');
+  const $projoOneSquare = $('.projoOneSquare');
+  const $projoOneIntro = $('.projoOneIntro');
+  const $projoOneDesc = $('.projoOneDesc');
+  const $projoThreeSquare = $('.projoThreeSquare');
+  const $projoThreeIntro = $('.projoThreeIntro');
+  const $projoThreeDesc = $('.projoThreeDesc');
+  const $contacts = $('.contacts');
 
   //Burger menu animation with greensock / gsap
-  var menu = $('.menu'),
+  const menu = $('.menu'),
     menuitem1 = $('.menu__item--1'),
     menuitem2 = $('.menu__item--2'),
     menuitem3 = $('.menu__item--3'),
     speed = 0.15;
+
+  $projoOneSquare.on('mouseover', () => {
+    $projoOneIntro.addClass('hidden');
+    $projoOneDesc.removeClass('hidden');
+  });
+
+  $projoOneSquare.on('mouseout', () => {
+    $projoOneIntro.removeClass('hidden');
+    $projoOneDesc.addClass('hidden');
+  });
+
+
+  $projoThreeSquare.hover( function() {
+    $projoThreeIntro.toggleClass('hidden');
+    $projoThreeDesc.toggleClass('hidden');
+  });
 
 
 
@@ -22,31 +45,52 @@ $(() => {
   function updateHeader() {
     // const viewportHeight = $(window).height();
     const scrollTop = $(window).scrollTop();
-    const tripleHeight = ($('#blackOverlay').height()*3);
+    // const tripleHeight = ($('#blackOverlay').height()*3);
+    const screenWidth = $(window).width();
 
-
-    if(scrollTop <= 650){
+    if(scrollTop <= 650 && screenWidth > 780){
       $name.show();
       $gaSummary.hide();
       $bangerDesc.hide();
       $spotlightDesc.hide();
-    } else if(scrollTop <= 1600) {
+      $contacts.hide();
+    } else if(scrollTop <= 1600 && screenWidth > 780) {
       $gaSummary.show();
       $name.hide();
       $bangerDesc.hide();
       $spotlightDesc.hide();
-    } else if(scrollTop <= 2800) {
+      $contacts.hide();
+    } else if(scrollTop <= 2800 && screenWidth > 780) {
       $bangerDesc.show();
       $spotlightDesc.hide();
-    } else if(scrollTop <= 4100){
+      $contacts.hide();
+    } else if(scrollTop <= 4000 && screenWidth > 780){
+      // console.log(scrollTop);
       $spotlightDesc.show();
       $bangerDesc.hide();
-    } else {
+      $contacts.hide();
+    } else if(scrollTop >= 4085 && screenWidth > 780){
+      // console.log(scrollTop);
+      $contacts.show();
+      $spotlightDesc.show();
+      $bangerDesc.hide();
+    } else if(screenWidth > 780){
+      $contacts.hide();
       $gaSummary.hide();
       $spotlightDesc.hide();
       $bangerDesc.hide();
     }
-    $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
+    // $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
+    // console.log(scrollTop);
+    if(scrollTop >= 4000 && scrollTop <= 4600) {
+      menuitem1.css({ 'background-color': 'black'});
+      menuitem2.css({ 'background-color': 'black'});
+      menuitem3.css({ 'background-color': 'black'});
+    } else {
+      menuitem1.css({ 'background-color': 'white'});
+      menuitem2.css({ 'background-color': 'white'});
+      menuitem3.css({ 'background-color': 'white'});
+    }
 
   }
 
