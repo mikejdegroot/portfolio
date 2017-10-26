@@ -4,7 +4,8 @@
 /* global Quint */
 
 $(function () {
-
+  var $loader = $('.loader');
+  var $master = $('.master');
   var $gaSummary = $('.gaSumarry');
   var $name = $('.name');
   var $bangerDesc = $('.projoTwoDesc');
@@ -17,6 +18,12 @@ $(function () {
   var $projoThreeDesc = $('.projoThreeDesc');
   var $contacts = $('.contacts');
 
+  function show() {
+    $loader.hide();
+    $master.fadeIn();
+  }
+
+  setTimeout(show, 3000);
   //Burger menu animation with greensock / gsap
   var menu = $('.menu'),
       menuitem1 = $('.menu__item--1'),

@@ -1,5 +1,5 @@
 @import "bootstrap/bootstrap-grid";
-$primary:	#454545;
+$primary:	#242424;
 $secondary: #F2F2F2;
 $tertiary: #F18F01;
 
@@ -11,7 +11,11 @@ body {
   }
 }
 
+
 .hidden {
+  display: none;
+}
+.master {
   display: none;
 }
 
@@ -39,6 +43,19 @@ body {
   font-weight: bold;
 }
 
+.loader {
+  height: 100vh;
+  background-color: $primary;
+  #loaderIcon {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-image: url('../assets/images/dual-ring.svg');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
 h1, h2, h3 {
   @extend .header-styles;
@@ -104,7 +121,6 @@ header {
     margin-bottom: 14px;
     background-color: #fff;
     border-radius: 3px;
-    transition: 0.8s;
   }
 
   .menu {
@@ -134,7 +150,7 @@ header {
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: #000;
+    background-color: $primary;
     nav {
       width: 100%;
       ul {

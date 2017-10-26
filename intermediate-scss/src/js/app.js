@@ -2,7 +2,8 @@
 /* global Quint */
 
 $(() => {
-
+  const $loader = $('.loader');
+  const $master = $('.master');
   const $gaSummary = $('.gaSumarry');
   const $name = $('.name');
   const $bangerDesc = $('.projoTwoDesc');
@@ -15,12 +16,18 @@ $(() => {
   const $projoThreeDesc = $('.projoThreeDesc');
   const $contacts = $('.contacts');
 
+  function show() {
+    $loader.hide();
+    $master.fadeIn();
+  }
+
+  setTimeout(show, 3000);
   //Burger menu animation with greensock / gsap
   const menu = $('.menu'),
-    menuitem1 = $('.menu__item--1'),
-    menuitem2 = $('.menu__item--2'),
-    menuitem3 = $('.menu__item--3'),
-    speed = 0.15;
+  menuitem1 = $('.menu__item--1'),
+  menuitem2 = $('.menu__item--2'),
+  menuitem3 = $('.menu__item--3'),
+  speed = 0.15;
 
   $projoOneSquare.on('mouseover', () => {
     $projoOneIntro.addClass('hidden');
