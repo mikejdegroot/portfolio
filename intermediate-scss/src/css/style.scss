@@ -1,11 +1,13 @@
 @import "bootstrap/bootstrap-grid";
 $primary:	#242424;
+$primary-faded:	black;
 $secondary: #F2F2F2;
 $tertiary: #F18F01;
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
   main {
     width: 100%;
   }
@@ -13,9 +15,6 @@ body {
 
 
 .hidden {
-  display: none;
-}
-.master {
   display: none;
 }
 
@@ -44,6 +43,8 @@ body {
 }
 
 .loader {
+  z-index: 10;
+  position: fixed;
   height: 100vh;
   background-color: $primary;
   #loaderIcon {
@@ -195,7 +196,6 @@ header {
 
 #top {
   height: 100vh;
-  width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/windfarm.jpg');
   background-attachment: fixed;
   background-position: center;
@@ -213,51 +213,37 @@ header {
 }
 
 #about {
-  height: 400px;
-  h1 {
-    font-size: 25px;
-    margin-top: 30px;
-    margin-left: 260px;
-    margin-bottom: 35px;
-    span {
-      font-size: 30px;
-      float: right;
-      color: white;
-      cursor: pointer;
-      &:hover {
-        color: black;
+  text-align: center;
+  background-color: $primary-faded;
+  .wordsOne {
+    h1 {
+      font-size: 25px;
+      margin-top: 40px;
+      span {
+        font-size: 30px;
+        float: right;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          color: black;
+        }
       }
     }
   }
-    p {
-    @extend .text-left-styles;
-  }
+
   .profile-pic {
+    // height: 50vh;
     background-color: black;
     background-image: url('../assets/images/brighton.jpg');
     -webkit-filter: grayscale(100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    div {
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-
-      h1 {
-        span {
-          float: right;
-          &:hover {
-            color: white;
-          }
-        }
-      }
     }
   }
-}
 
 #sectionTwo {
-  height: 650px;
+  height: 80vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/laptop.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -265,7 +251,6 @@ header {
   background-size: cover;
   position: relative;
   .gaSumaryOverlay {
-    width: 50%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
@@ -273,9 +258,7 @@ header {
     position: fixed;
     top: 190px;
     color: white;
-    h1, p {
-      @extend .text-left-styles;
-    }
+    text-align: center;
   }
 }
 
@@ -498,120 +481,133 @@ footer {
 }
 
 @media only screen and (max-width: 770px) {
-  header {
-    aside {
-      nav {
-        ul {
-          a {
-            font-size: 15px;
-            li {
-              padding: 14px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .navArrows {
-    display: none;
-  }
-  p {
-    font-size: 14px;
-  }
-  .text-left-styles {
-    margin-left: 60px;
-    text-align: center;
-    width: 80%;
-    left: 10%;
-  }
-
   .text-right-styles {
     letter-spacing: 1px;
     text-align: center;
   }
-
-  %item { //burger
-    width: 40px;
-    height: 6px;
-    margin-bottom: 16px;
+  .text-left-styles {
+    // margin-left: 60px;
+    text-align: center;
   }
+
   .up {
     top: 0;
-    height: 550px;
-  }
-
-  .down {
-    background-color: rgba(0, 0, 0, 0.2);
-    height: 550px;
-  }
-
-  #top {
-    h1 {
-      font-size: 24px;
-      position: absolute;
-    }
-  }
-  #about {
-    height: 500px;
-    width: 100%;
-  }
-  #sectionTwo {
-    background-attachment: fixed;
-    height: 500px;
-    .gaSumaryOverlay {
-      width: 100%;
-      height: 100%;
-    }
-    .gaSumarry {
-      position: absolute;
-      top: 150px;
-      color: white;
-    }
-  }
-
-  #blackOverlay{
-    display: none;
-  }
-
-  #sectionThree {
-    height: 500px;
-  }
-  #sectionFour {
-    height: 500px;
-    .row {
-      .bangerAlertOverlay {
-        .projoTwoDesc{
-          top: 100px;
-          position: absolute;
-          left: 20%;
-
-
-        }
-      }
-    }
-  }
-
-  #sectionSix {
-    height: 500px;
-    // background-attachment: scroll;
-    .spotlightOverlay {
-      width: 100%;
-      .projoFourDesc {
-        position: absolute;
-        top: 200px;
-        width: 80%;
-      }
-    }
-  }
-
-  #tech {
-    height: 250px;
-    text-align: center;
-    h1 {
-      padding: 24px;
-    }
-    i.tech {
-      font-size: 3em;
-    }
   }
 }
+//   header {
+//     aside {
+//       nav {
+//         ul {
+//           a {
+//             font-size: 15px;
+//             li {
+//               padding: 14px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .navArrows {
+//     display: none;
+//   }
+//   p {
+//     font-size: 14px;
+//   }
+//   .text-left-styles {
+//     margin-left: 60px;
+//     text-align: center;
+//     width: 80%;
+//     left: 10%;
+//   }
+//
+//   .text-right-styles {
+//     letter-spacing: 1px;
+//     text-align: center;
+//   }
+//
+//   %item { //burger
+//     width: 40px;
+//     height: 6px;
+//     margin-bottom: 16px;
+//   }
+//   .up {
+//     top: 0;
+//     height: 550px;
+//   }
+//
+//   .down {
+//     background-color: rgba(0, 0, 0, 0.2);
+//     height: 550px;
+//   }
+//
+//   #top {
+//     h1 {
+//       font-size: 24px;
+//       position: absolute;
+//     }
+//   }
+//   #about {
+//     height: 500px;
+//     width: 100%;
+//   }
+//   #sectionTwo {
+//     background-attachment: fixed;
+//     height: 500px;
+//     .gaSumaryOverlay {
+//       width: 100%;
+//       height: 100%;
+//     }
+//     .gaSumarry {
+//       position: absolute;
+//       top: 150px;
+//       color: white;
+//     }
+//   }
+//
+//   #blackOverlay{
+//     display: none;
+//   }
+//
+//   #sectionThree {
+//     height: 500px;
+//   }
+//   #sectionFour {
+//     height: 500px;
+//     .row {
+//       .bangerAlertOverlay {
+//         .projoTwoDesc{
+//           top: 100px;
+//           position: absolute;
+//           left: 20%;
+//
+//
+//         }
+//       }
+//     }
+//   }
+//
+//   #sectionSix {
+//     height: 500px;
+//     // background-attachment: scroll;
+//     .spotlightOverlay {
+//       width: 100%;
+//       .projoFourDesc {
+//         position: absolute;
+//         top: 200px;
+//         width: 80%;
+//       }
+//     }
+//   }
+//
+//   #tech {
+//     height: 250px;
+//     text-align: center;
+//     h1 {
+//       padding: 24px;
+//     }
+//     i.tech {
+//       font-size: 3em;
+//     }
+//   }
+// }

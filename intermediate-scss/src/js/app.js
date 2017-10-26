@@ -16,12 +16,12 @@ $(() => {
   const $projoThreeDesc = $('.projoThreeDesc');
   const $contacts = $('.contacts');
 
-  function show() {
-    $loader.hide();
-    $master.fadeIn();
-  }
-
-  setTimeout(show, 3000);
+  // function show() {
+  //   // $master.fadeIn();
+  //   $loader.hide();
+  // }
+  $loader.hide();
+  // setTimeout(show, 3000);
   //Burger menu animation with greensock / gsap
   const menu = $('.menu'),
   menuitem1 = $('.menu__item--1'),
@@ -50,58 +50,76 @@ $(() => {
   $(window).scroll(updateHeader).trigger('scroll'); //run the update header function on scroll
 
   function updateHeader() {
-    // const viewportHeight = $(window).height();
-    const scrollTop = $(window).scrollTop();
-    // const tripleHeight = ($('#blackOverlay').height()*3);
-    const screenWidth = $(window).width();
 
-    if(scrollTop <= 650 && screenWidth > 780){
-      $name.show();
-      $gaSummary.hide();
-      $bangerDesc.hide();
-      $spotlightDesc.hide();
-      $contacts.hide();
-    } else if(scrollTop <= 1600 && screenWidth > 780) {
-      $gaSummary.show();
-      $name.hide();
-      $bangerDesc.hide();
-      $spotlightDesc.hide();
-      $contacts.hide();
-    } else if(scrollTop <= 2800 && screenWidth > 780) {
-      $bangerDesc.show();
-      $spotlightDesc.hide();
-      $contacts.hide();
-    } else if(scrollTop <= 4000 && screenWidth > 780){
-      // console.log(scrollTop);
-      $spotlightDesc.show();
-      $bangerDesc.hide();
-      $contacts.hide();
-    } else if(scrollTop >= 4000  && screenWidth > 780){
-      // console.log(scrollTop);
-      $contacts.show();
-      $spotlightDesc.show();
-      $bangerDesc.hide();
-    } else if(screenWidth > 780){
-      $contacts.hide();
-      $gaSummary.hide();
-      $spotlightDesc.hide();
-      $bangerDesc.hide();
-    }
-    // $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
-    // console.log(scrollTop);
-    if(scrollTop >= 4000 && scrollTop <= 4600) {
-      menuitem1.css({ 'background-color': 'black'});
-      menuitem2.css({ 'background-color': 'black'});
-      menuitem3.css({ 'background-color': 'black'});
+    const scrollTop = $(window).scrollTop();
+    const screenWidth = $(window).width();
+    console.log('height is ', scrollTop);
+    console.log('width is ', scrollTop);
+
+
+    if(screenWidth > 780) { //desktop breakpoints for DT
+      if(scrollTop <= 650){
+        $name.show();
+        $gaSummary.hide();
+        $bangerDesc.hide();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      } else if(scrollTop <= 1600) {
+        $gaSummary.show();
+        $name.hide();
+        $bangerDesc.hide();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      } else if(scrollTop <= 2800) {
+        $bangerDesc.show();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      } else if(scrollTop <= 4000){
+        // console.log(scrollTop);
+        $spotlightDesc.show();
+        $bangerDesc.hide();
+        $contacts.hide();
+      } else if(scrollTop >= 4000){
+        // console.log(scrollTop);
+        $contacts.show();
+        $spotlightDesc.show();
+        $bangerDesc.hide();
+      } else if(screenWidth > 780){
+        $contacts.hide();
+        $gaSummary.hide();
+        $spotlightDesc.hide();
+        $bangerDesc.hide();
+      }
     } else {
-      menuitem1.css({ 'background-color': 'white'});
-      menuitem2.css({ 'background-color': 'white'});
-      menuitem3.css({ 'background-color': 'white'});
+      if(scrollTop < 600) {
+        $name.show();
+        $gaSummary.hide();
+        $bangerDesc.hide();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      } else if(scrollTop > 600) {
+        $gaSummary.show();
+        $name.hide();
+        $bangerDesc.hide();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      }
+
+      // $('#blackOverlay').css('opacity',scrollTop/tripleHeight);
+      // console.log(scrollTop);
+      if(scrollTop >= 4000 && scrollTop <= 4600) {
+        menuitem1.css({ 'background-color': 'black'});
+        menuitem2.css({ 'background-color': 'black'});
+        menuitem3.css({ 'background-color': 'black'});
+      } else {
+        menuitem1.css({ 'background-color': 'white'});
+        menuitem2.css({ 'background-color': 'white'});
+        menuitem3.css({ 'background-color': 'white'});
+      }
+
     }
 
   }
-
-
   //instantiate  timeline
   var tl = new TimelineLite({paused: true}); //pause default
   //collapse burger
