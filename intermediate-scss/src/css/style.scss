@@ -329,9 +329,7 @@ header {
     }
 }
 #sectionFive {
-  height: 400px;
   .projoThreeImg {
-    // background: transparent;
     background-color: black;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/project-screens/wabi-sabi-1.png');
     transition: filter 0.5s;
@@ -368,7 +366,7 @@ header {
 }
 
 #sectionSix {
-  height: 600px;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/project-screens/spotlight-articles.png');
   transition: filter 0.5s;
   background-attachment: fixed;
@@ -378,9 +376,7 @@ header {
   position: relative;
 
   .spotlightOverlay {
-    width: 50%;
     height: 100%;
-    transition: 1s;
     background-color: rgba(0, 0, 0, 0.8);
     .vDiv {
       position: absolute;
@@ -395,21 +391,18 @@ header {
       position: fixed;
       top: 200px;
       color: white;
-      h1, p {
-        @extend .text-left-styles;
-      }
     }
   }
 }
 
 #tech {
-  height: 550px;
+  height: 100vh;
   text-align: center;
   h1 {
     padding: 50px;
   }
   i.tech {
-    font-size: 6em;
+    font-size: 3.5em;
     margin: 10px;
   }
 
@@ -454,7 +447,7 @@ footer {
     a {
       @extend .header-styles;
       text-decoration: none;
-      font-size: 36px;
+      font-size: 22px;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
