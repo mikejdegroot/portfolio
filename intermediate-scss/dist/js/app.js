@@ -53,7 +53,7 @@ $(function () {
     var scrollTop = $(window).scrollTop();
     var screenWidth = $(window).width();
     console.log('height is ', scrollTop);
-    console.log('width is ', scrollTop);
+    console.log('width is ', screenWidth);
 
     if (screenWidth > 780) {
       //desktop breakpoints for DT
@@ -90,16 +90,21 @@ $(function () {
         $bangerDesc.hide();
       }
     } else {
+      //scrollTop breaks for MB
       if (scrollTop < 600) {
         $name.show();
         $gaSummary.hide();
         $bangerDesc.hide();
         $spotlightDesc.hide();
         $contacts.hide();
-      } else if (scrollTop > 600) {
+      } else if (scrollTop < 2000) {
         $gaSummary.show();
         $name.hide();
         $bangerDesc.hide();
+        $spotlightDesc.hide();
+        $contacts.hide();
+      } else if (scrollTop < 3000) {
+        $bangerDesc.show();
         $spotlightDesc.hide();
         $contacts.hide();
       }
