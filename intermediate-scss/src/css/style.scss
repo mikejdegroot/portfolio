@@ -1,6 +1,5 @@
 @import "bootstrap/bootstrap-grid";
 $primary:	#242424;
-$primary-faded:	black;
 $secondary: #F2F2F2;
 $tertiary: #F18F01;
 
@@ -76,23 +75,6 @@ h1, h2, h3 {
   }
 }
 
-.navArrows {
-  color: white;
-  display: block;
-  cursor: pointer;
-  margin-top: 20px;
-  &:hover {
-    color: black;
-  }
-}
-#dark {
-  color: black;
-  z-index: 5;
-  &:hover {
-    color: $primary;
-  }
-
-}
 
 .up {
   background-color: $primary;
@@ -103,7 +85,7 @@ h1, h2, h3 {
 }
 
 .down {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: none;
   height: 500px;
   z-index: 1;
   color: white;
@@ -117,13 +99,13 @@ header {
   z-index: 2;
   height: 100px;
 
-  $aside-width: 240px;
+  $aside-width: 160px;
 
   %item {
     position: relative;
-    width: 80px;
-    height: 6px;
-    margin-bottom: 14px;
+    width: 60px;
+    height: 3px;
+    margin-bottom: 17px;
     background-color: #fff;
     border-radius: 3px;
   }
@@ -157,26 +139,20 @@ header {
     bottom: 0;
     background-color: $primary;
     nav {
-      width: 100%;
       ul {
         list-style: none;
         a {
           color: white;
           font-size: 24px;
           text-decoration: none;
-          width: 100%;
           li {
-            width: 100%;
             padding: 20px;
             float: right;
             span {
               float: right;
             }
             &:hover {
-              background-color: $tertiary;
-              border-radius: 4px;
-              color: black;
-              opacity: 0.5;
+              color: $tertiary;
             }
           }
         }
@@ -217,23 +193,15 @@ header {
 }
 
 #about {
+  height: 50vh;
   text-align: center;
-  background-color: $primary-faded;
   .wordsOne {
     h1 {
       font-size: 25px;
       margin-top: 40px;
-      span {
-        font-size: 30px;
-        float: right;
-        color: white;
-        cursor: pointer;
-        &:hover {
-          color: black;
-        }
       }
     }
-  }
+
 
   .profile-pic {
     background-color: black;
@@ -292,17 +260,6 @@ header {
       float: left;
     }
   }
-  .navDiv {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    float: left;
-    span {
-      float: left;
-
-    }
-  }
-
 }
 
 #sectionFour {
@@ -350,19 +307,6 @@ header {
       }
     }
   }
-  span {
-    float: right;
-
-  }
-  .navDiv {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    span {
-      float: right;
-
-    }
-  }
 }
 
 #sectionSix {
@@ -378,28 +322,19 @@ header {
   .spotlightOverlay {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    .vDiv {
-      position: absolute;
-      bottom: 20px;
-      right: 52%;
-      span {
-        float: right;
-
-      }
     }
     .projoFourDesc {
       position: fixed;
       top: 200px;
       color: white;
     }
-  }
 }
 
 #tech {
   height: 100vh;
   text-align: center;
   h1 {
-    padding: 50px;
+    padding-top: 50px;
   }
   i.tech {
     font-size: 3.5em;
@@ -409,9 +344,6 @@ header {
   div.skillz {
     text-align: center;
     margin-bottom: 15px;
-  }
-  .vDiv {
-    margin-left: -90px;
   }
 
 }
@@ -435,24 +367,27 @@ footer {
 }
 
 #contact {
-  height: 700px;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/windfarm.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
-  text-align: center;
   div {
+    text-align: center;
+    position: relative;
+    padding: 0 !important;
     a {
-      @extend .header-styles;
-      text-decoration: none;
-      font-size: 22px;
       position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      display: block;
+      @extend .header-styles;
+      font-size: 16px;
+      text-decoration: none;
       color: white;
-      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       &:hover {
         color: black;
       }
@@ -473,7 +408,15 @@ footer {
   .up {
     top: 0;
   }
+  #about {
+    height: 175vh;
+  }
+
+  #sectionTwo {
+    height: 100vh;
+  }
 }
+
 //   header {
 //     aside {
 //       nav {

@@ -3,6 +3,8 @@
 /* global TimelineLite */
 /* global Quint */
 
+//going to have to restructure all html without sections in order to make the site responsive
+// at the moment the section height messes up  all of the responsiveness because the divs stack, changing the section hieght on mobile and squashing up the other sections. adjusting this for mobile screen does not work either because it is radically different on each mobile screen  
 $(function () {
   var $loader = $('.loader');
   var $master = $('.master');
@@ -23,28 +25,13 @@ $(function () {
   //   $loader.hide();
   // }
   $loader.hide();
-  // setTimeout(show, 3000);
+  // setTimeout(show, 2000);
   //Burger menu animation with greensock / gsap
   var menu = $('.menu'),
       menuitem1 = $('.menu__item--1'),
       menuitem2 = $('.menu__item--2'),
       menuitem3 = $('.menu__item--3'),
       speed = 0.15;
-
-  $projoOneSquare.on('mouseover', function () {
-    $projoOneIntro.addClass('hidden');
-    $projoOneDesc.removeClass('hidden');
-  });
-
-  $projoOneSquare.on('mouseout', function () {
-    $projoOneIntro.removeClass('hidden');
-    $projoOneDesc.addClass('hidden');
-  });
-
-  $projoThreeSquare.hover(function () {
-    $projoThreeIntro.toggleClass('hidden');
-    $projoThreeDesc.toggleClass('hidden');
-  });
 
   $(window).scroll(updateHeader).trigger('scroll'); //run the update header function on scroll
 
@@ -151,7 +138,6 @@ $(function () {
   });
 
   $('nav a').on('click', scrollToSection);
-  $('h1 span').on('click', scrollToSection);
   //scroll to selection on nav, then close the nav
   function scrollToSection() {
     var section = $(this).attr('href');
