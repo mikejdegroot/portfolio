@@ -1,84 +1,108 @@
-@import "bootstrap/bootstrap-grid";
-$primary:	#242424;
 $white: #FFF;
-$tertiary: #F18F01;
+
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  background: $white;
-  color: $white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/windfarm-web.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    font-family: 'Lato', sans-serif;
 }
 
-
-.header-styles {
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: bold;
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-
-h1, h2, h3 {
-  @extend .header-styles;
-}
-
-ul {
-  list-style: none;
-  padding: 0px;
-  margin: 5px 0;
-  li {
-    margin: 5px 0 10px 0;
-    display: inline;
-    font-size: 12px;
-    padding-right: 12px;
-  }
-  li:not(:first-child) {
-    border-left: 1px solid;
-    padding-left: 12px;
-  }
-}
-
-.links {
-  text-decoration: none;
-  font-size: 20px;
-  color: $white;
-  &:hover {
-    color: $tertiary;
-  }
-  &--email {
-    font-size: 16px;
-  }
-}
+// .img-responsive {
+//   width: 100%;
+//   height: auto;
+// }
 
 
-#top {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/windfarm-web.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  .left {
-    display: table;
-    height: 100vh;
-    .inner {
-      display: table-cell;
-      vertical-align: middle;
-      padding-left: 50px;
-      h1 {
-        font-size: 36px;
-      }
-      h4  {
-        margin: 25px 0 5px 0;
-      }
-      p {
-        margin: 0;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 768px) {
-  #top {
-    height: 200vh;
-  }
-}
+// @import "bootstrap/bootstrap-grid";
+// $primary:	#242424;
+// $white: #FFF;
+// $tertiary: #F18F01;
+//
+// body {
+//   font-family: 'Lato', sans-serif !important;
+//   font-weight: 300;
+//   background: $white;
+//   color: $white;
+// }
+//
+//
+// .header-styles {
+//   letter-spacing: 1px;
+//   text-transform: uppercase;
+//   font-weight: bold;
+// }
+//
+//
+// h1, h2, h3 {
+//   @extend .header-styles;
+// }
+//
+// ul {
+//   list-style: none;
+//   padding: 0px;
+//   margin: 5px 0;
+//   li {
+//     margin: 5px 0 10px 0;
+//     display: inline;
+//     font-size: 12px;
+//     padding-right: 12px;
+//   }
+//   li:not(:first-child) {
+//     border-left: 1px solid;
+//     padding-left: 12px;
+//   }
+// }
+//
+// .links {
+//   text-decoration: none;
+//   font-size: 14px;
+//   color: $white;
+//   &:hover {
+//     color: $tertiary;
+//   }
+//   &--email {
+//     font-size: 16px;
+//   }
+// }
+//
+//
+// main {
+//   height: 100vh;
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/windfarm-web.jpg');
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-size: cover;
+//   position: relative;
+//   .left {
+//     display: table;
+//     height: 100vh;
+//     .inner {
+//       display: table-cell;
+//       vertical-align: middle;
+//       padding-left: 50px;
+//       h1 {
+//         font-size: 36px;
+//       }
+//       h4  {
+//         margin: 25px 0 5px 0;
+//       }
+//       p {
+//         margin: 0;
+//       }
+//     }
+//   }
+// }
+// @media only screen and (max-width: 768px) {
+//   main {
+//     height: 200vh;
+//   }
+// }
