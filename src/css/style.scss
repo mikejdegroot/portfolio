@@ -1,4 +1,7 @@
 $white: #FFF;
+$primary: #EF233C;
+$secondary: #8D99AE;
+$tertiary: #2B2D42;
 
 
 body {
@@ -14,6 +17,35 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: $tertiary;
+  &:hover {
+    color: $primary;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  li {
+    display: inline;
+    position: relative;
+  }
+  li:not(:first-child) {
+    padding: 0 10px;
+  }
+  li:not(:last-child) {
+    &:after {
+      content: '||';
+      position: absolute;
+      right: 0px;
+    }
+  }
 }
 
 // .img-responsive {
