@@ -13,12 +13,36 @@
   maximum-scale=1.0, user-scalable=no"/>
 </head>
 <body>
-  <main>
+  <aside>
+    <nav>
+      <ul class="main-nav">
+        <li class="main-nav__item">Personal Projects
+          <ul class="sub-menu">
+            <li><a class="project-trigger" data-id="project-1">Js game</a></li>
+            <li><a class="project-trigger" data-id="project-2">Js game</a></li>
+            <li><a class="project-trigger">Js game</a></li>
+          </ul>
+        </li>
+        <li class="main-nav__item">Workplace Projects
+          <ul class="sub-menu">
+            <li><a class="project-trigger" data-id="project-1">User Replay</a></li>
+            <li><a class="project-trigger" data-id="project-2">User Replay</a></li>
+            <li><a class="project-trigger" data-id="project-3">User Replay</a></li>
+            <li><a class="project-trigger" data-id="project-4">User Replay</a></li>
+            <li><a class="project-trigger" data-id="project-5">User Replay</a></li>
+          </ul>
+        </li>
+        <li class="main-nav__item">Technology</li>
+        <li class="main-nav__item">Contact</li>
+      </ul>
+    </nav>
+  </aside>
+  <section class="home">
     <!-- <img src="../assets/images/windfarm-web.jpg" /> -->
     <div class="left">
       <h1 class="name">Mike de Groot</h1>
       <h4>Web Developer</h4>
-      <ul>
+      <ul class="contact-nav">
         <li>
           <a class="links links--email" href="mailto:mike.j.degroot@gmail.com">Email</a>
         </li>
@@ -26,10 +50,21 @@
           <a class="links links--email" href="https://github.com/mikejdegroot">GitHub</a>
         </li>
       </ul>
-
-
     </div>
-    <div class="center">
+    </section>
+    <section class="project" id="project-1">
+      <div class="inner">
+        <h1>Project 1</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <section class="project" id="project-2">
+      <div class="inner">
+        <h1>Project 2</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <!-- <div class="center">
       <h1>Personal projects</h1>
       <h4>Javascript Game</h4>
       <ul>
@@ -182,7 +217,6 @@
         <li>PostgresQL</li>
         <li>Bulma</li>
       </ul>
-    </div>
-  </main>
+    </div> -->
 </body>
 </html>
