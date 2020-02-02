@@ -16,7 +16,7 @@ $tertiary: #2B2D42;
 
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/windfarm-web.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/images/windfarm-web.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,11 +27,12 @@ body {
 ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  margin: 0 0 5px 0;
   li {
     display: inline;
+    font-size: 12px;
     &:not(:first-child) {
-      padding-left: 15px;
+      padding-left: 5px;
     }
   }
 }
@@ -39,8 +40,6 @@ ul {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
 }
-
-
 
 .home {
   display: flex;
@@ -50,32 +49,19 @@ h1, h2, h3, h4, h5, h6 {
   padding: 25px;
 }
 
+.project {
+  padding: 5px 0;
+}
+
+.left, .middle, .right {
+  flex-grow: 1;
+}
+
 a {
   text-decoration: none;
   color: $secondary;
   display: inline;
   &:hover {
     color: $primary;
-  }
-}
-
-.project {
-  width: 0;
-  overflow: hidden;
-  position: absolute;
-  left: 20%;
-  top: 0;
-  background-color: $white;
-  height: 100vh;
-  color: $black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  &.active {
-    width: 80%;
-    transition: width .5s;
-  }
-  .inner {
-    padding: 0 40px;
   }
 }
