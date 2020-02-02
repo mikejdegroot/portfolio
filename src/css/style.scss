@@ -22,6 +22,7 @@ body {
     background-size: cover;
     color: $white;
     font-family: 'Lato', sans-serif;
+    min-height: 100vh;
 }
 
 ul {
@@ -37,24 +38,46 @@ ul {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   margin-bottom: 15px;
+}
+
+h5, h6 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 12px;
+  margin: 0 0 5px 0;
 }
 
 .home {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  height: 100vh;
   padding: 25px;
+  @media (max-width: 740px) {
+    flex-direction: column;
+    align-items: left;
+  }
+  @media (min-width: 740px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .project {
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .left, .middle, .right {
   flex-grow: 1;
+  padding-right: 20px;
+  @media (max-width: 740px) {
+    min-height: 100vh;
+  }
+}
+
+.left {
 }
 
 a {
@@ -63,5 +86,8 @@ a {
   display: inline;
   &:hover {
     color: $primary;
+    &.disabled {
+      color: $secondary;
+    }
   }
 }
